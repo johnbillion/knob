@@ -48,5 +48,4 @@ jobs:
           gh release create "$TAG" \
             "Knob-$TAG.zip" \
             --draft \
-            --title "Knob $TAG" \
-            --generate-notes
+            --title "$TAG" \
