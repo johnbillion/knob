@@ -1,0 +1,20 @@
+name: Knob
+options:
+  bundleIdPrefix: com.local
+  deploymentTarget:
+    macOS: "13.0"
+
+targets:
+  Knob:
+    type: application
+    platform: macOS
+    sources:
+      - Knob
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.local.Knob
+        INFOPLIST_FILE: Knob/Info.plist
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        ENABLE_HARDENED_RUNTIME: NO
+        SWIFT_VERSION: "5.0"
