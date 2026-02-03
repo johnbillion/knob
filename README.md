@@ -21,6 +21,10 @@ make build
 make run
 ```
 
+## Quitting
+
+Launch the app a second time then use the Dock icon to quit the app.
+
 ## License
 
 MIT
