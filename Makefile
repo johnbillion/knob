@@ -1,4 +1,4 @@
-.PHONY: build release run clean icon
+.PHONY: build run clean icon
 
 ICON_SRC = Knob/AppIcon.svg
 ICON_OUT = Knob/AppIcon.icns
@@ -32,9 +32,6 @@ icon: $(ICON_SRC)
 	rm -rf .icon_build
 
 build: $(ICON_OUT)
-	xcodebuild -project Knob.xcodeproj -scheme Knob -configuration Debug build
-
-release: $(ICON_OUT)
 	xcodebuild -project Knob.xcodeproj -scheme Knob -configuration Release -derivedDataPath build
 
 $(ICON_OUT): $(ICON_SRC)

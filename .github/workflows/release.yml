@@ -30,7 +30,7 @@ jobs:
         run: xcodegen
 
       - name: Build
-        run: xcodebuild -project Knob.xcodeproj -scheme Knob -configuration Release -derivedDataPath build
+        run: make build
 
       - name: Package
         env:
