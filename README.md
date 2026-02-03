@@ -1,12 +1,16 @@
 # Knob
 
-A tiny macOS app that displays an animated volume knob overlay when the system volume changes.
+A tiny app for macOS 26 (Tahoe) and later that displays an animated volume knob overlay when the system volume changes.
 
 ![Knob](screenshots/knob.png)
 
 ## Requirements
 
-- macOS 13.0+
+- macOS 26.0+
+
+## Installing
+
+Download the latest release here: https://github.com/johnbillion/knob/releases/latest
 
 ## Building
 

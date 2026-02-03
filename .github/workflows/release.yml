@@ -14,7 +14,7 @@ concurrency:
 jobs:
   release:
     name: Build and Draft Release
-    runs-on: macos-latest
+    runs-on: macos-26
     permissions:
       contents: write
     timeout-minutes: 5

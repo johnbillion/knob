@@ -2,7 +2,7 @@ name: Knob
 options:
   bundleIdPrefix: com.local
   deploymentTarget:
-    macOS: "13.0"
+    macOS: "26.0"
 
 packages:
   PreviewScreenshots:
