@@ -44,6 +44,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self?.showOverlay()
             }
             .store(in: &cancellables)
+
+        // Show overlay on launch
+        showOverlay()
     }
 
     private var cancellables = Set<AnyCancellable>()
