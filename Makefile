@@ -40,7 +40,7 @@ $(ICON_OUT): $(ICON_SRC)
 run: build
 	pkill -x Knob 2>/dev/null || true
 	sleep 0.5
-	open ~/Library/Developer/Xcode/DerivedData/Knob-bzvfuggowxngrqaciottolguhrsu/Build/Products/Debug/Knob.app
+	open build/Build/Products/Release/Knob.app
 
 clean:
 	xcodebuild -project Knob.xcodeproj -scheme Knob clean
