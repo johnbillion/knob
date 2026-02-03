@@ -4,6 +4,11 @@ options:
   deploymentTarget:
     macOS: "13.0"
 
+packages:
+  PreviewScreenshots:
+    url: https://github.com/johnbillion/swiftui-preview-screenshots
+    from: "1.0.0"
+
 targets:
   Knob:
     type: application
@@ -17,4 +22,19 @@ targets:
         CODE_SIGN_IDENTITY: "-"
         CODE_SIGN_STYLE: Manual
         ENABLE_HARDENED_RUNTIME: NO
+        SWIFT_VERSION: "5.0"
+
+  KnobTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - KnobTests
+    dependencies:
+      - target: Knob
+      - package: PreviewScreenshots
+    settings:
+      base:
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.0"

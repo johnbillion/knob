@@ -122,13 +122,13 @@ struct Arc: Shape {
     }
 }
 
-#Preview("Knob at 80%") {
+#Preview("Knob at 80 percent") {
     KnobView(value: 0.8)
         .frame(width: 200, height: 200)
         .padding(40)
 }
 
-#Preview("Knob at 0% (Muted)") {
+#Preview("Knob Muted") {
     KnobView(value: 0)
         .frame(width: 200, height: 200)
         .padding(40)
