@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    name: Build and Draft Release
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: xcodegen
+
+      - name: Build
+        run: xcodebuild -project Knob.xcodeproj -scheme Knob -configuration Release -derivedDataPath build
+
+      - name: Package
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          ditto -c -k --keepParent \
+            build/Build/Products/Release/Knob.app \
+            "Knob-$TAG.zip"
+
+      - name: Create draft release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" \
+            "Knob-$TAG.zip" \
+            --draft \
+            --title "Knob $TAG" \
+            --generate-notes
