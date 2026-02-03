@@ -22,6 +22,9 @@ targets:
         CODE_SIGN_IDENTITY: "-"
         CODE_SIGN_STYLE: Manual
         ENABLE_HARDENED_RUNTIME: NO
+        DEPLOYMENT_POSTPROCESSING: YES
+        STRIP_INSTALLED_PRODUCT: YES
+        STRIP_STYLE: non-global
         SWIFT_VERSION: "5.0"
 
   KnobTests:

@@ -1,7 +1,10 @@
-.PHONY: build run clean
+.PHONY: build release run clean
 
 build:
 	xcodebuild -project Knob.xcodeproj -scheme Knob -configuration Debug build
+
+release:
+	xcodebuild -project Knob.xcodeproj -scheme Knob -configuration Release -derivedDataPath build
 
 run: build
 	pkill -x Knob 2>/dev/null || true
