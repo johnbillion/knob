@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Volume arc gradient: blue to purple, left to right -->
+    <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#007AFF"/>
+      <stop offset="100%" stop-color="#BF5AF2"/>
+    </linearGradient>
+
+    <!-- Knob base: light gray to dark gray, top to bottom -->
+    <linearGradient id="knobBase" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#595959"/>
+      <stop offset="100%" stop-color="#404040"/>
+    </linearGradient>
+
+    <!-- Knob highlight: radial gradient offset to upper-left -->
+    <radialGradient id="knobHighlight" cx="30%" cy="30%" r="53%">
+      <stop offset="0%" stop-color="#737373"/>
+      <stop offset="100%" stop-color="#4D4D4D"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Volume arc: from 135deg to 351deg (value=0.8), clockwise through the top -->
+  <path d="M 89.5 422.5 A 235.5 235.5 0 1 1 488.6 219.2"
+        stroke="url(#arcGrad)" stroke-width="20" stroke-linecap="round" fill="none"/>
+
+  <!-- Knob base circle -->
+  <circle cx="256" cy="256" r="204.8" fill="url(#knobBase)"/>
+
+  <!-- Knob highlight circle -->
+  <circle cx="256" cy="256" r="194.6" fill="url(#knobHighlight)"/>
+
+  <!-- Indicator notch (rotated to 80% position = 81deg from 12 o'clock) -->
+  <rect x="251" y="59" width="10" height="61" rx="5" fill="white"
+        transform="rotate(81, 256, 256)"/>
+
+  <!-- Tick marks -->
+  <!-- i=0 angle=225 major -->
+  <rect x="253.5" y="10" width="5" height="26" fill="rgba(128,128,128,0.5)" transform="rotate(225, 256, 256)"/>
+  <!-- i=1 angle=252 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(252, 256, 256)"/>
+  <!-- i=2 angle=279 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(279, 256, 256)"/>
+  <!-- i=3 angle=306 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(306, 256, 256)"/>
+  <!-- i=4 angle=333 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(333, 256, 256)"/>
+  <!-- i=5 angle=360 major -->
+  <rect x="253.5" y="10" width="5" height="26" fill="rgba(128,128,128,0.5)" transform="rotate(360, 256, 256)"/>
+  <!-- i=6 angle=387 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(387, 256, 256)"/>
+  <!-- i=7 angle=414 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(414, 256, 256)"/>
+  <!-- i=8 angle=441 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(441, 256, 256)"/>
+  <!-- i=9 angle=468 minor -->
+  <rect x="254.5" y="10" width="3" height="15" fill="rgba(128,128,128,0.5)" transform="rotate(468, 256, 256)"/>
+  <!-- i=10 angle=495 major -->
+  <rect x="253.5" y="10" width="5" height="26" fill="rgba(128,128,128,0.5)" transform="rotate(495, 256, 256)"/>
+</svg>
